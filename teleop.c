@@ -45,9 +45,10 @@ int j1_s1_y = 0;
 int j1_s2_x = 0;
 int j1_s2_y = 0;
 
+#include "nxt-motors.h"
+
 task main()
 {
-
-
-
+	//Motors and servos tasks
+	StartTask(nxtMotors);
 }
