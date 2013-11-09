@@ -29,6 +29,9 @@
 #pragma config(Servo, srvo_Matrix_S2_3, servo7, tServoStandard)
 #pragma config(Servo, srvo_Matrix_S2_4, servo8, tServoStandard)
 
+//External drivers
+#include "JoystickDriver.c"
+
 #define false 0;
 #define true 1;
 
@@ -46,9 +49,17 @@ int j1_s2_x = 0;
 int j1_s2_y = 0;
 
 #include "nxt-motors.h"
+#include "control.h"
 
 task main()
 {
 	//Motors and servos tasks
 	StartTask(nxtMotors);
+
+	//analog controller and maths tasks
+	StartTask(controller);
+	StartTask(controllerToMotors);
+
+	while(running) {
+	}
 }
