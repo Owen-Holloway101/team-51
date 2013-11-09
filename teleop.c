@@ -42,12 +42,6 @@ int motorCSpeed = 0;
 int motorDSpeed = 0;
 int motorESpeed = 0;
 
-int j1_s1_x = 0;
-int j1_s1_y = 0;
-
-int j1_s2_x = 0;
-int j1_s2_y = 0;
-
 #include "nxt-motors.h"
 #include "control.h"
 
@@ -57,7 +51,6 @@ task main()
 	StartTask(nxtMotors);
 
 	//analog controller and maths tasks
-	StartTask(controller);
 	StartTask(controllerToMotors);
 
 	while(running) {
