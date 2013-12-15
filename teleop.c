@@ -32,6 +32,7 @@
 //External drivers
 #include "JoystickDriver.c"
 
+//Not necissary but supposed good practice
 #define false 0;
 #define true 1;
 
